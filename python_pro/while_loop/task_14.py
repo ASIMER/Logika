@@ -9,7 +9,7 @@
 n = int(input())
 while n < 100 \
         or 1000 <= n \
-        or not n % 2 and n % 3:
+        or not (n % 2 == 0 and n % 3 == 0):
     print("Неверно, попробуй другое число!")
     n = int(input())
 print("Верно!")

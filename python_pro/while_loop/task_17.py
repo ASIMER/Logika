@@ -8,9 +8,11 @@
 """
 
 n = int(input())
-while n < 0:
+
+while n <= 0:
     print("Неверное число")
     n = int(input())
+
 div_n = 1
 while div_n <= n:
     if not n % div_n:

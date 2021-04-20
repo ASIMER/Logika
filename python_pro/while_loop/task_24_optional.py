@@ -32,6 +32,7 @@ while not choice:
     while not divider:
         print("На ноль делить нельзя!")
         divider = int(input())
+
     if dividend % divider:
         print("Числа не делятся целочисленно!")
     else:

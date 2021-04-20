@@ -8,10 +8,12 @@
 """
 
 n = int(input())
+
 while n < 10 \
         or 100 <= n:
     print("Введено неверное число")
     n = int(input())
+
 div_n = 2
 while n % div_n:
     div_n += 1

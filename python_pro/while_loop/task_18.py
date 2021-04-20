@@ -9,9 +9,11 @@
 Правильный пароль — 584.
 """
 n, try_count = input(), 1
+
 while n != "584" and try_count < 3:
     print("Неверный код")
     n, try_count = input(), try_count + 1
+
 if try_count == 3:
     print("Неверный код")
     print("Увы, все попытки ввода исчерпаны!")
