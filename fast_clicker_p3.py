@@ -5,7 +5,7 @@ import time
 init()
 '''создаём окно программы'''
 back = (200, 255, 255) #цвет фона (background)
-mw = display.set_mode((500, 500)) #окно программы (main window)
+mw = display.set_mode((600, 500)) #окно программы (main window)
 mw.fill(back)
 clock = pygame.time.Clock()
 '''класс прямоугольник'''
@@ -63,9 +63,9 @@ score.draw(0,0)
 for i in range(num_cards):
   new_card = Label(x, 170, 70, 100, YELLOW)
   new_card.outline(BLUE, 10)
-  new_card.set_text('CLICK', 26)
+  new_card.set_text('CLICK', 20)
   cards.append(new_card)
-  x = x + 100
+  x = x + 120
 wait = 0
 points = 0
 from random import randint
@@ -106,11 +106,11 @@ while True:
        win.set_text("Время вышло!!!", 60, DARK_BLUE)
        win.draw(110, 180)
        break
-  
-  if int(new_time) - int(cur_time) == 1: #проверяем, есть ли разница в 1 секунду между старым и новым временем
-       timer.set_text(str(int(new_time - start_time)),40, DARK_BLUE)
-       timer.draw(0,0)
-       cur_time = new_time
+
+  timer.fill()
+  timer.color(back)
+  timer.set_text(str(round(start_time-new_time, 1)),40, DARK_BLUE)
+  timer.draw(0,0)
  
   if points >= 5:
        win = Label(0, 0, 500, 500, LIGHT_GREEN)

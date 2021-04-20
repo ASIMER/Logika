@@ -6,7 +6,7 @@ pygame.init()
 '''создаём окно программы'''
 
 
-mw = pygame.display.set_mode((600, 500)) #окно программы (main window)
+mw = pygame.display.set_mode((500, 500)) #окно программы (main window)
 mw.fill(BACKGROUND)
 clock = pygame.time.Clock()
 
@@ -56,31 +56,31 @@ num_cards = 4
 x = 70
 
 for i in range(num_cards):
-    new_card = Label(x, 170, 110, 110, YELLOW)
+    new_card = Label(x, 170, 70, 100, YELLOW)
     new_card.outline(BLUE, 10)
-    new_card.set_image("img/click_img_trasp.gif", (110, 110))
+    new_card.set_image("img/pac-1.png", (20, 20))
     cards.append(new_card)
-    x += 130
+    x += 100
 
 
 
 
 start_time = time.time()
 old_time = time.time()
- 
+
 time_text = Label(0,0,50,50,BACKGROUND)
 time_text.set_text('Время:',40, DARK_BLUE)
 time_text.draw(20, 20)
- 
+
 score_text = Label(380,0,50,50,BACKGROUND)
 score_text.set_text('Счёт:',45, DARK_BLUE)
 score_text.draw(20,20)
- 
-timer = Label(50,75,50,40,BACKGROUND)
+
+timer = Label(50,55,50,40,BACKGROUND)
 timer.set_text('0', 40, DARK_BLUE)
 timer.draw(0,0)
- 
-score = Label(430,75,50,40,BACKGROUND)
+
+score = Label(430,55,50,40,BACKGROUND)
 score.set_text('0', 40, DARK_BLUE)
 score.draw(0,0)
 
@@ -98,7 +98,7 @@ while True:
         for i in range(num_cards):
             cards[i].color(YELLOW)
             if (i + 1) == click:
-                cards[i].draw(0, 0)
+                cards[i].draw(10, 40)
             else:
                 cards[i].fill()
     else:
@@ -113,7 +113,6 @@ while True:
                 #ищем, в какую карту попал клик
                 if cards[i].collidepoint(x,y) and (i + 1) == click:
                     cards[i].color(GREEN)
-
                 elif cards[i].collidepoint(x,y):
                     #иначе перекрашиваем в красный, минус очко
                     cards[i].color(RED)
